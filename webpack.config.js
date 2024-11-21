@@ -4,13 +4,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: {
         index: './src/index.js',
         print: './src/print.js',
     },
+    devtool: 'inline-source-map', // 追踪错误与警告在源代码中的原始位置
     plugins: [
         new HtmlWebpackPlugin({
-            title: '管理输出',
+            title: 'Development',
         }),
     ],
     output: {
